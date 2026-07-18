@@ -1,4 +1,5 @@
 from argparse import ArgumentParser
+from src import counter
 
 def parse_args():
     parser = ArgumentParser()
@@ -9,5 +10,6 @@ def parse_args():
 
 if __name__ == "__main__":
     args = parse_args()
+    sequence = args.sequence
 
-    print(args.sequence)
+    counter.validate_sequence(sequence)

@@ -28,7 +28,7 @@ def validate_sequence(sequence):
             exit(1)
 
 def count_aminos(sequence):
-    amino_counts = {}
+    amino_counts = {amino: 0 for amino in amino_lists}
 
     for c in sequence:
         if c in amino_counts:

@@ -12,7 +12,8 @@ def parse_args():
 
     # Formatting args
     parser.add_argument("-t", "--table", action="store_true", help="Print the frequencies as a table.")
-
+    parser.add_argument("-v", "--verbose", action="store_true", help="Print full amino acid names.")
+    
     args = parser.parse_args()
     
     if not args.file and not args.sequence:
@@ -40,6 +41,6 @@ if __name__ == "__main__":
     frequencies = counter.count_aminos(sequence)
 
     if args.table:
-        formatter.print_table(frequencies)
+        formatter.print_table(frequencies, args.verbose)
     else:
-        formatter.print_normal(frequencies)
+        formatter.print_normal(frequencies, args.verbose)

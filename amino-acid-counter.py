@@ -9,7 +9,10 @@ def parse_args():
 
     parser.add_argument("-s", "--sequence", help="The protein sequence to be counted.")
     parser.add_argument("-f", "--file", help="File path to FASTA protein file.")
-    
+
+    # Formatting args
+    parser.add_argument("-t", "--table", action="store_true", help="Print the frequencies as a table.")
+
     args = parser.parse_args()
     
     if not args.file and not args.sequence:
@@ -27,16 +30,16 @@ if __name__ == "__main__":
 
     if args.file:
         sequence = parser.parse_fasta(args.file)
-        print(sequence)
     else:
         sequence = args.sequence
-
-
 
     # These two functions could definitely be combined into 1.
     # That would make this counter be O(2N) instead of O(N)
     # but hey, separation of concerns.
     counter.validate_sequence(sequence)
-    frequences = counter.count_aminos(sequence)
+    frequencies = counter.count_aminos(sequence)
 
-    formatter.print_normal(frequences)
+    if args.table:
+        formatter.print_table(frequencies)
+    else:
+        formatter.print_normal(frequencies)

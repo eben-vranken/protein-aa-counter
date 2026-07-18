@@ -41,3 +41,48 @@ python amino-acid-counter.py -f data/human_protein.fasta -t
 ```
 
 ### Example Output
+```
+| Amino | Count |
+| A     | 2     |
+| R     | 0     |
+| N     | 0     |
+| D     | 0     |
+| C     | 0     |
+| E     | 1     |
+| Q     | 1     |
+| G     | 4     |
+| H     | 0     |
+| I     | 1     |
+| L     | 2     |
+| K     | 2     |
+| M     | 1     |
+| F     | 0     |
+| P     | 0     |
+| S     | 1     |
+| T     | 2     |
+| W     | 0     |
+| Y     | 1     |
+| V     | 4     |
+```
+
+## Configuration Matrix
+
+| Argument | Option / Choices | Default | Description |
+| --- | --- | --- | --- |
+| `-s`, `--sequence` | *Protein sequence string* | *None* | Raw protein sequence to count (e.g. `MTEYK`). Required unless `-f` is used. |
+| `-f`, `--file` | *File path* | *None* | Path to a FASTA protein file. Required unless `-s` is used. |
+| `-t`, `--table` | *Flag* | `False` | Print the frequencies as a formatted table instead of a plain list. |
+| `-v`, `--verbose` | *Flag* | `False` | Print full amino acid names (e.g. `Alanine`) instead of single-letter codes. |
+
+## Feature Set
+
+* **Sequence Parsing:** Reads a raw sequence directly, or extracts and concatenates the sequence lines from a FASTA file, skipping header lines.
+* **Input Validation:** Rejects any character outside the 20-letter amino acid alphabet and requires exactly one of `-s` or `-f`.
+* **Frequency Counting:** Tallies occurrences of all 20 amino acids across the sequence, including ones with zero occurrences.
+* **Plain Output:** Prints each amino acid and its count on its own line.
+* **Table Rendering:** Prints a clean, column-aligned table of counts, with column widths sized to fit the longest label.
+* **Verbose Labels:** Swaps single-letter codes for full amino acid names in either output mode.
+
+## License
+
+MIT

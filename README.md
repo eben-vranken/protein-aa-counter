@@ -42,27 +42,28 @@ python amino-acid-counter.py -f data/human_protein.fasta -t
 
 ### Example Output
 ```
-| Amino | Count |
-| A     | 2     |
-| R     | 0     |
-| N     | 0     |
-| D     | 0     |
-| C     | 0     |
-| E     | 1     |
-| Q     | 1     |
-| G     | 4     |
-| H     | 0     |
-| I     | 1     |
-| L     | 2     |
-| K     | 2     |
-| M     | 1     |
-| F     | 0     |
-| P     | 0     |
-| S     | 1     |
-| T     | 2     |
-| W     | 0     |
-| Y     | 1     |
-| V     | 4     |
+| Amino         | Count |
+-------------------------
+| Alanine       | 23    |
+| Arginine      | 7     |
+| Asparagine    | 10    |
+| Aspartic acid | 21    |
+| Cysteine      | 13    |
+| Glutamic acid | 36    |
+| Glutamine     | 13    |
+| Glycine       | 15    |
+| Histidine     | 8     |
+| Isoleucine    | 8     |
+| Leucine       | 22    |
+| Lysine        | 12    |
+| Methionine    | 8     |
+| Phenylalanine | 7     |
+| Proline       | 14    |
+| Serine        | 10    |
+| Threonine     | 15    |
+| Tryptophan    | 6     |
+| Tyrosine      | 6     |
+| Valine        | 21    |
 ```
 
 ## Configuration Matrix

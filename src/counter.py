@@ -26,3 +26,14 @@ def validate_sequence(sequence):
         if c not in amino_lists:
             print(f"Sequence contained invalid character: %s" % c)
             exit(1)
+
+def count_aminos(sequence):
+    amino_counts = {}
+
+    for c in sequence:
+        if c in amino_counts:
+            amino_counts[c] += 1
+        else:
+            amino_counts[c] = 1
+    
+    return amino_counts

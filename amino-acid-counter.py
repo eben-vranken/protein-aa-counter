@@ -12,4 +12,10 @@ if __name__ == "__main__":
     args = parse_args()
     sequence = args.sequence
 
+    # These two functions could definitely be combined into 1.
+    # That would make this counter be O(2N) instead of O(N)
+    # but hey, separation of concerns.
     counter.validate_sequence(sequence)
+    frequences = counter.count_aminos(sequence)
+
+    print(frequences)

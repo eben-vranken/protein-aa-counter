@@ -24,7 +24,7 @@ def parse_args():
         print("Using both flag and sequence flags in one command is not allowed.")
         exit(1)
 
-    return parser.parse_args()
+    return args
 
 if __name__ == "__main__":
     args = parse_args()

@@ -1,6 +1,8 @@
 from argparse import ArgumentParser
+
 from src import counter
 from src import parser
+from src import formatter
 
 def parse_args():
     parser = ArgumentParser()
@@ -37,4 +39,4 @@ if __name__ == "__main__":
     counter.validate_sequence(sequence)
     frequences = counter.count_aminos(sequence)
 
-    print(frequences)
+    formatter.print_normal(frequences)
